@@ -207,7 +207,7 @@
         </div>
         @endif
 
-        <form method="post" action="{{ route('login') }}">
+        <form method="post" action="{{ route('dashboard') }}">
             @csrf
             <div class="input-group">
                 <input type="text" name="username" id="username" required>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Register Pengguna - Nat Ticket</title>
+  <title>Register Pengguna - TickCher</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,12 +34,12 @@
 <body>
 
   <main>
-    {{-- Alert Success --}}
-    {{-- @if (session()->has('success'))
+
+ @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
         </div>
-    @endif --}}
+    @endif 
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-12">

@@ -26,8 +26,8 @@ Route::get('/', function () {
 });
 
 // Authentication routes
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/login', [PenggunaController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [PenggunaController::class, 'login']);
 Route::get('/registeradmin', [RegisterAdminController::class, 'showRegistrationForm'])->name('registeradmin');
 Route::post('/registeradmin', [RegisterAdminController::class, 'registeradmin']);
 Route::get('/registerpengguna', [RegisterPenggunaController::class, 'showRegistrationForm'])->name('registerpengguna');
@@ -35,8 +35,8 @@ Route::post('/registerpengguna', [RegisterPenggunaController::class, 'registerpe
 
 // Protected routes
 Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
-    // Dashboard
-    Route::get('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
+    // Dashboard - now supports both GET and POST
+    Route::match(['get', 'post'], '/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
 
     // Admin routes
     Route::prefix('Admin')->group(function () {
